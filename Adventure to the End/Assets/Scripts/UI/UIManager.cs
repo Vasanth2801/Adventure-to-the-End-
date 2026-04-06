@@ -63,11 +63,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Stop()
-    {
-        Application.Quit();
-    }
-
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
