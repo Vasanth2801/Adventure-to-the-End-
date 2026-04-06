@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool isGrounded;
 
+    [Header("Normal Attack Settings")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRadius;
+    [SerializeField] private LayerMask attackLayer;
+
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
@@ -37,6 +42,10 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+
+        Attack();
+
+        HeavyAttack();
     }
 
     private void Move()
@@ -59,6 +68,33 @@ public class Player : MonoBehaviour
         facingDirection *= -1;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
+
+    void Attack()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            animator.SetTrigger("Attack");
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, attackLayer);
+            foreach(Collider2D hit in hitEnemies)
+            {
+                Debug.Log("Attacking");
+            }
+        }
+    }
+
+    void HeavyAttack()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            animator.SetTrigger("HeavyAttack");
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRadius, attackLayer);
+            foreach(Collider2D hit in hitEnemies)
+            {
+                Debug.Log("Heavy Attacking");
+            }
+        }
+    }
+
 
     void HandleAnimations()
     {
