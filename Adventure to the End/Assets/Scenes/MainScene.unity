@@ -691,6 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1440708195}
   - component: {fileID: 1440708196}
+  - component: {fileID: 1440708197}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -771,6 +772,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1440708197
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440708194}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4f5cd9fd244c3840b76d9ad8d1ccdcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1560701567
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +949,7 @@ MonoBehaviour:
     m_Bits: 64
   isGrounded: 0
   rb: {fileID: 2144719340}
+  animator: {fileID: 1440708197}
   moveInput: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
